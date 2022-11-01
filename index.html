@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,37 +11,53 @@
     <p>Você tem dificuldade em saber o nome de cada estado pela sigla? Hoje eu estou aqui para te ajudar !!! </p>
     <P>Escolha uma sigla que irei te apresentar o nome do estado</P>
     
-    <select name="sigla_estado" id="sigla_estado">
+    
+    <select id="sigla_estado" onchange="responder_sigla()">
         <option>Selecione o Estado</option>
-        <option value="0">AC</option>
-        <option value="1">AL</option>
-        <option value="2">AP</option>
-        <option value="3">AM</option>
-        <option value="4">BA</option>
-        <option value="5">CE</option>
-        <option value="6">DF</option>
-        <option value="7">ES</option>
-        <option value="8">GO</option>
-        <option value="9">MA</option>
-        <option value="10">MT</option>
-        <option value="11">MS</option>
-        <option value="12">MG</option>
-        <option value="13">PA</option>
-        <option value="14">PB</option>
-        <option value="15">PR</option>
-        <option value="16">PE</option>
-        <option value="17">PI</option>
-        <option value="18">RJ</option>
-        <option value="19">RN</option>
-        <option value="20">RS</option>
-        <option value="21">RO</option>
-        <option value="22">RR</option>
-        <option value="23">SC</option>
-        <option value="24">SP</option>
-        <option value="25">SE</option>
-        <option value="26">TO</option>
+        <option value="Acre">AC</option>
+        <option value="Alagoas">AL</option>
+        <option value="Amapa">AP</option>
+        <option value="Amazonas">AM</option>
+        <option value="Bahia">BA</option>
+        <option value="Ceara">CE</option>
+        <option value="Distrito Federal">DF</option>
+        <option value="Espirito Santo">ES</option>
+        <option value="Goias">GO</option>
+        <option value="Maranhao">MA</option>
+        <option value="Mato Grosso">MT</option>
+        <option value="Mato Grosso do Sul">MS</option>
+        <option value="Minas Gerais">MG</option>
+        <option value="Para">PA</option>
+        <option value="Paraíba">PB</option>
+        <option value="Parana">PR</option>
+        <option value="Pernambuco">PE</option>
+        <option value="Piaui">PI</option>
+        <option value="Rio de Janeiro">RJ</option>
+        <option value="Rio Grande do Norte">RN</option>
+        <option value="Rio Grande do Sul">RS</option>
+        <option value="Rondonia">RO</option>
+        <option value="Roraima">RR</option>
+        <option value="Santa Catarina">SC</option>
+        <option value="Sao Paulo">SP</option>
+        <option value="Sergipe">SE</option>
+        <option value="Tocantins">TO</option>
     </select>
     
-    <script src="function.js"></script>
+    <div id="resposta_sigla"></div>
+
+
+    <script>
+        function responder_sigla(){
+            var estado = sigla_estado.value
+            var resposta = `O estado da sigla é ${estado}`
+            
+            renderizar_sigla(resposta)
+        }
+        
+        function renderizar_sigla(texto){
+            document.getElementById('resposta_sigla').innerHTML = texto
+        }
+
+    </script>
 </body>
 </html>
